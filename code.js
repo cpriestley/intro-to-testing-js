@@ -12,6 +12,11 @@ function sayHello(name) {
             return helloWorld();
     }
 }
+
+function isFive(input) {
+    return input === 5 || parseInt(input) === 5;
+}
+
 function isEmptyString(input) {
     return input.length === 0;
 }
@@ -19,3 +24,10 @@ function isEmptyString(input) {
 function isNumber(input) {
     return !isNaN(input);
 }
+
+console.log(isFive(5));
+console.log(isFive("5"));
+console.log(isFive("Five"));
+console.log(isFive(null));
+console.log(isFive({}));
+console.log(isFive([]));
