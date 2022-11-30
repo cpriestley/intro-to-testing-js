@@ -4,12 +4,18 @@ function helloWorld() {
 }
 function sayHello(name) {
     switch(toString.call(name)) {
-        case '[object Null]':
-        case '[object Undefined]':
-        case '[object Boolean]':
-            return helloWorld();
-            break;
+        case '[object String]':
+            return isEmptyString(name) || isNumber(name)
+                ? helloWorld()
+                : `Hello, ${name}!`;
         default:
+            return helloWorld();
     }
-    return `Hello, ${name}!`;
+}
+function isEmptyString(input) {
+    return input.length === 0;
+}
+
+function isNumber(input) {
+    return !isNaN(input);
 }

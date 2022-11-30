@@ -21,7 +21,7 @@ describe('sayHello', function () {
     it('should return a string when called', function() {
         expect(typeof sayHello()).toBe("string");
     });
-    it('should return the string "Hello, Jane!" when sayHello(\'Jane\') is executed', function() {
+    it('should return the string "Hello, Jane!" when executed with Jane as the argument', function() {
         expect(sayHello('Jane')).toBe("Hello, Jane!");
     });
     it('should return the string "Hello, Alex!" when executed with \'Alex\' as the argument', function() {
@@ -36,11 +36,15 @@ describe('sayHello', function () {
     it('should return the string "Hello, World!" when executed with true as the argument', function() {
         expect(sayHello(true)).toBe("Hello, World!");
     });
-    it('should return the string "Hello, World!" when executed with false as the argument', function() {
-        expect(sayHello(false)).toBe("Hello, World!");
-    });
     it('should return the string "Hello, World!" when executed with null as the argument', function() {
         expect(sayHello(null)).toBe("Hello, World!");
     });
-
+    it('should return the string "Hello, World!" when executed with and object as the argument', function() {
+        expect(sayHello({})).toBe("Hello, World!");
+    });
+    it('should return the string "Hello, World!" when executed with an array as the argument', function() {
+        expect(sayHello([])).toBe("Hello, World!");
+    });
 })
+
+
