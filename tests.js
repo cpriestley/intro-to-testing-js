@@ -70,3 +70,62 @@ describe('isFive', function () {
         expect(isFive()).toBe(false);
     });
 });
+describe('isEven', function () {
+    it('should be a defined function', function () {
+        expect(typeof isEven).toBe('function');
+    });
+    it('should return true when executed with the numeral 2 as the argument', function() {
+        expect(isEven(2)).toBe(true);
+    });
+    it('should return true when executed with the numeral -4 as the argument', function() {
+        expect(isEven(-4)).toBe(true);
+    });
+    it('should return false when executed with the numeral 3 as the argument', function() {
+        expect(isEven(3)).toBe(false);
+    });
+    it('should return false when executed with the string literal \'banana\' as the argument', function() {
+        expect(isEven('banana')).toBe(false);
+    });
+    it('should return true when executed with the string literal \'8\' as the argument', function() {
+        expect(isEven('8')).toBe(true);
+    });
+    it('should return false when executed with Infinity as the argument', function() {
+        expect(isEven(Infinity)).toBe(false);
+    });
+    it('should return false when executed with true as the argument', function() {
+        expect(isEven(true)).toBe(false);
+    });
+    it('should return false when executed with false as the argument', function() {
+        expect(isEven(false)).toBe(false);
+    });
+})
+describe('isVowel', function () {
+    it('should be a defined function', function () {
+        expect(typeof isVowel).toBe('function');
+    });
+    it('should return true when executed with \'a\' as the argument', function() {
+        expect(isVowel('a')).toBe(true);
+    });
+    it('should return true when executed with \'a\' as the argument', function() {
+        expect(isVowel('A')).toBe(true);
+    });
+    it('should return false when executed with \'y\' as the argument', function() {
+        expect(isVowel('y')).toBe(false);
+    });
+    it('should return false when executed with 4 as the argument', function() {
+        expect(isVowel(4)).toBe(false);
+    });
+    it('should return false when executed with true as the argument', function() {
+        expect(isVowel(true)).toBe(false);
+    });
+    it('should return false when executed with false as the argument', function() {
+        expect(isVowel(true)).toBe(false);
+    });
+    it('should return false when executed with \'banana\' as the argument', function() {
+        expect(isVowel('banana')).toBe(false);
+    });
+    it('should return false when executed with \'aeiou\' as the argument', function() {
+        expect(isVowel('aeiou')).toBe(false);
+    });
+
+})

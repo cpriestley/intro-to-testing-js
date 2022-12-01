@@ -25,9 +25,24 @@ function isNumber(input) {
     return !isNaN(input);
 }
 
-console.log(isFive(5));
-console.log(isFive("5"));
-console.log(isFive("Five"));
-console.log(isFive(null));
-console.log(isFive({}));
-console.log(isFive([]));
+function isEven(input) {
+    if (typeof input === 'boolean') return false;
+    if (typeof input === 'string' && input.length === 0) return false;
+    return input % 2 === 0;
+}
+
+function isVowel(input) {
+    if (isSingleLetter(input)) {
+        if ('aeiou'.includes(input.toLowerCase())) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function isSingleLetter(input) {
+    if (typeof input === 'string') {
+        return input.match(/^[a-zA-Z]$/) || [].length;
+    }
+    return false;
+}
