@@ -10,7 +10,7 @@ describe('helloWorld', function() {
       expect(helloWorld()).toBe("Hello, World!");
     });
     it("should never return 'undefined' when called", function() {
-      expect(helloWorld()).not.toBe(undefined);
+      expect(helloWorld()).not.toBeUndefined();
     });
 });
 
@@ -128,4 +128,30 @@ describe('isVowel', function () {
         expect(isVowel('aeiou')).toBe(false);
     });
 
+})
+describe('add', function () {
+    it(`should be a defined function`, function () {
+        expect(typeof add).toBe('function');
+    });
+    it(`should return 8 when executed with (3,5) as arguments`, function() {
+        expect(add(3,5)).toBe(8);
+    });
+    it(`should return -12 when executed with (-3,-9) as arguments`, function() {
+        expect(add(-3,-9)).toBe(-12);
+    });
+    it(`should return 11 when executed with ('5',6) as arguments`, function() {
+        expect(add('5', 6)).toBe(11);
+    });
+    it(`should return false when executed with ('-4','10') as arguments`, function() {
+        expect(add('-4', '10')).toBe(6);
+    });
+    it(`should return NaN when executed with ('banana','split') as arguments`, function() {
+        expect(add('banana','split')).toBeNaN();
+    });
+    it(`should return NaN when executed with (2, 'apples') as arguments`, function() {
+        expect(add(2, 'apples')).toBeNaN();
+    });
+    it(`should return NaN when executed without arguments`, function() {
+        expect(add()).toBeNaN();
+    });
 })

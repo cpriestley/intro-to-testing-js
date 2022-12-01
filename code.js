@@ -40,6 +40,13 @@ function isVowel(input) {
     return false;
 }
 
+function add(lhs, rhs) {
+    if(isNumber(lhs) && isNumber(rhs)) {
+        return parseFloat(lhs) + parseFloat(rhs);
+    }
+    return NaN;
+}
+
 function isSingleLetter(input) {
     if (typeof input === 'string') {
         return input.match(/^[a-zA-Z]$/) || [].length;
